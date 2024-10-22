@@ -136,8 +136,9 @@ GameObject:
   - component: {fileID: 141247334}
   - component: {fileID: 141247333}
   - component: {fileID: 141247332}
+  - component: {fileID: 141247338}
   m_Layer: 0
-  m_Name: Dynamic Sprite
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,9 +325,25 @@ Transform:
   m_LocalPosition: {x: -6.4997, y: -2.2648, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1393375252}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &141247338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141247331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95358a016300b1e40ad37b05783fa7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabPoint: {fileID: 1393375252}
+  grabRange: 2
+  throwForce: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +450,7 @@ GameObject:
   - component: {fileID: 578017411}
   m_Layer: 0
   m_Name: Dynamic Sprite (1)
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -724,6 +741,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1393375251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1393375252}
+  m_Layer: 0
+  m_Name: Hold Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1393375252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393375251}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.010300159, y: 0.18480015, z: 0.082595296}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 141247337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1777099262
 GameObject:
