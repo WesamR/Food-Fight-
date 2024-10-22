@@ -7,13 +7,17 @@ public class CharInput : MonoBehaviour
     private bool grounded=false;
     private Rigidbody2D rb;
 
+    [Header("Grabbing/Throwing")]
     [SerializeField]
-    private int groundedMass = 1, nonGroundMass = 20;
-    
+    private GameObject grabBox;
+
+    [Header("Movements")]
     [SerializeField]
-    public float groundDrag = 1, airDrag = 0.5f;
+    private int groundedMass = 1, nonGroundMass = 1;
     [SerializeField]
-    public int speed=30,jumpForce =500;
+    public float groundDrag = 5, airDrag = 0.5f;
+    [SerializeField]
+    public int speed=5, airSpeed = 2, jumpForce =500;
 
 
 
@@ -26,28 +30,27 @@ public class CharInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // change mass depending on grounded so char falls faster and doesn't float on the way down
+        // changing mass dont affect fall speed
         if (grounded)
         {
-            rb.mass=1;
+            rb.mass=groundedMass;
         }
         else
         {
-            rb.mass = 20;
+            rb.mass = nonGroundMass;
         }
 
         /*
          * Movement
         */
         // moving
-        if (Input.GetButtonDown("Horizontal")) MoveChar(Input.GetAxis("Horizontal"));
-        else MoveChar();
+        MoveChar(Input.GetAxis("Horizontal"));
 
         // jump
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            rb.drag = 0.5f;
-            rb.AddForce(new Vector2(0, jumpForce));
+            //rb.drag = airDrag;
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
         }
     }
 
@@ -71,7 +74,7 @@ public class CharInput : MonoBehaviour
     }
 
     /*
-     * Movement conditional methods
+     * Movement methods
     */  
     /// <summary>
     /// Moves char left/right
@@ -79,20 +82,40 @@ public class CharInput : MonoBehaviour
     /// <param name="moveVal">1 right, -1 left</param>
     private void MoveChar(float moveVal=0)
     {
-        // drag changes so movement is slower mid air
+        // linear drag changes so movement is slower mid air
+        // also the speed
 
         // if directional buttons are pressed
         if (moveVal!=0)
         {
-            if (grounded) rb.drag = groundDrag;
-            else rb.drag =airDrag;
-            rb.AddForce(new Vector2(moveVal * speed, 0));
+            if (grounded)
+            {
+                rb.drag = groundDrag;
+                rb.velocity = new Vector2(moveVal * speed, rb.velocity.y);
+            }
+            else
+            {
+                rb.drag = airDrag;
+                // put limit on how fast chat go midair
+                if(rb.velocity.x<=speed)rb.AddForce(new Vector2(moveVal * airSpeed, 0));
+            }
         }
         else
         {
-            rb.AddForce(Vector2.zero);
-            rb.drag = groundDrag;
+            //rb.AddForce(rb.velocity);
+            if (grounded) rb.drag = groundDrag;
+            else rb.drag = airDrag;
         }
 
+    }
+
+    private void GrabItem()
+    {
+        // spawn grab trigger
+        Instantiate(grabBox);
+
+        // if multiple items pick closest or first in order
+
+        // have item follow char movement and disabled collision
     }
 }
