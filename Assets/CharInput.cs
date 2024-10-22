@@ -8,7 +8,7 @@ public class CharInput : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField]
-    public int speed=30,jumpForce = 1000;
+    public int speed=30,jumpForce =500;
 
 
 
@@ -23,11 +23,11 @@ public class CharInput : MonoBehaviour
     {
         if (grounded)
         {
-            rb.mass=2;
+            rb.mass=1;
         }
         else
         {
-            rb.mass = 10;
+            rb.mass = 20;
         }
         /*
          * Movement
@@ -36,7 +36,8 @@ public class CharInput : MonoBehaviour
         // if directional buttons are pressed
         if (Input.GetButtonDown("Horizontal"))
         {
-            rb.drag= 2f;
+            if (grounded) rb.drag = 1f;
+            else rb.drag = 0.5f;
         }
         //left
         if (Input.GetAxis("Horizontal") < 0)
@@ -51,12 +52,13 @@ public class CharInput : MonoBehaviour
         else
         {
             rb.AddForce(Vector2.zero);
-            rb.drag = 0.05f;
+            rb.drag = 1f;
         }
 
         //jump
         if (Input.GetButtonDown("Jump") && grounded)
         {
+            rb.drag = 0.5f;
             rb.AddForce(new Vector2(0,jumpForce));
         }
 
