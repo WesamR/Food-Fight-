@@ -8,7 +8,7 @@ public class CharInput : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField]
-    public int speed=30,jumpForce =500;
+    public int speed=20,jumpForce =200;
 
 
 
