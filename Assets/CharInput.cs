@@ -8,6 +8,11 @@ public class CharInput : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField]
+    private int groundedMass = 1, nonGroundMass = 20;
+    
+    [SerializeField]
+    public float groundDrag = 1, airDrag = 0.5f;
+    [SerializeField]
     public int speed=30,jumpForce =500;
 
 
@@ -21,6 +26,7 @@ public class CharInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // change mass depending on grounded so char falls faster and doesn't float on the way down
         if (grounded)
         {
             rb.mass=1;
@@ -29,39 +35,20 @@ public class CharInput : MonoBehaviour
         {
             rb.mass = 20;
         }
+
         /*
          * Movement
         */
+        // moving
+        if (Input.GetButtonDown("Horizontal")) MoveChar(Input.GetAxis("Horizontal"));
+        else MoveChar();
 
-        // if directional buttons are pressed
-        if (Input.GetButtonDown("Horizontal"))
-        {
-            if (grounded) rb.drag = 1f;
-            else rb.drag = 0.5f;
-        }
-        //left
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            rb.AddForce(new Vector2(-speed,0));
-        }
-        //right
-        else if (Input.GetAxis("Horizontal") > 0)
-        {
-            rb.AddForce(new Vector2(speed, 0));
-        }
-        else
-        {
-            rb.AddForce(Vector2.zero);
-            rb.drag = 1f;
-        }
-
-        //jump
+        // jump
         if (Input.GetButtonDown("Jump") && grounded)
         {
             rb.drag = 0.5f;
-            rb.AddForce(new Vector2(0,jumpForce));
+            rb.AddForce(new Vector2(0, jumpForce));
         }
-
     }
 
     /*
@@ -81,5 +68,31 @@ public class CharInput : MonoBehaviour
         {
             grounded = false;
         }
+    }
+
+    /*
+     * Movement conditional methods
+    */  
+    /// <summary>
+    /// Moves char left/right
+    /// </summary>
+    /// <param name="moveVal">1 right, -1 left</param>
+    private void MoveChar(float moveVal=0)
+    {
+        // drag changes so movement is slower mid air
+
+        // if directional buttons are pressed
+        if (moveVal!=0)
+        {
+            if (grounded) rb.drag = groundDrag;
+            else rb.drag =airDrag;
+            rb.AddForce(new Vector2(moveVal * speed, 0));
+        }
+        else
+        {
+            rb.AddForce(Vector2.zero);
+            rb.drag = groundDrag;
+        }
+
     }
 }
