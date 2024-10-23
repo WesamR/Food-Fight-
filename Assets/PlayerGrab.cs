@@ -58,24 +58,24 @@ public class PlayerGrab : MonoBehaviour
     }
 }
 
-void ThrowFood()
-{
-    if (grabbedFood != null)
+    void ThrowFood()
     {
-        Rigidbody2D foodRb = grabbedFood.GetComponent<Rigidbody2D>();
-        if (foodRb != null)
+        if (grabbedFood != null)
         {
-            foodRb.isKinematic = false;
+            Rigidbody2D foodRb = grabbedFood.GetComponent<Rigidbody2D>();
+            CircleCollider2D foodCol = grabbedFood.GetComponent<CircleCollider2D>();
+            if (foodRb != null)
+            {
+                foodRb.isKinematic = false;
+            }
+            grabbedFood.transform.parent = null;
+            Vector2 throwDirection = new Vector2(transform.localScale.x, 0).normalized;
+            foodRb.AddForce(throwDirection * throwForce, ForceMode2D.Impulse);
+            foodCol.enabled = true;
+            grabbedFood = null;
+
         }
-        grabbedFood.transform.parent = null;
-        Vector2 throwDirection = new Vector2(transform.localScale.x, 0).normalized;
-        foodRb.AddForce(throwDirection * throwForce, ForceMode2D.Impulse);
-        grabbedFood = null;
 
-
-
-}
-
-}
+    }
 
 }
