@@ -138,7 +138,7 @@ public class CharInput : MonoBehaviour
     private void GrabItem()
     {
         // spawn grab trigger
-        Instantiate(grabBox);
+        //Instantiate(grabBox);
 
         // if multiple items pick closest or first in order
 
