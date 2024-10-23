@@ -7,8 +7,6 @@ public class CharInput : MonoBehaviour
     private bool grounded=false;
     private Rigidbody2D rb;
 
-    [SerializeField]
-    public int speed=20,jumpForce =200;
 
 
 
@@ -21,47 +19,6 @@ public class CharInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (grounded)
-        {
-            rb.mass=1;
-        }
-        else
-        {
-            rb.mass = 20;
-        }
-        /*
-         * Movement
-        */
-
-        // if directional buttons are pressed
-        if (Input.GetButtonDown("Horizontal"))
-        {
-            if (grounded) rb.drag = 1f;
-            else rb.drag = 0.5f;
-        }
-        //left
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            rb.AddForce(new Vector2(-speed,0));
-        }
-        //right
-        else if (Input.GetAxis("Horizontal") > 0)
-        {
-            rb.AddForce(new Vector2(speed, 0));
-        }
-        else
-        {
-            rb.AddForce(Vector2.zero);
-            rb.drag = 1f;
-        }
-
-        //jump
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            rb.drag = 0.5f;
-            rb.AddForce(new Vector2(0,jumpForce));
-        }
-
     }
 
     /*
@@ -82,4 +39,5 @@ public class CharInput : MonoBehaviour
             grounded = false;
         }
     }
+
 }
