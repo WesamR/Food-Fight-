@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharInput : MonoBehaviour
 {
+    private int moveInput=0;
     private bool grounded=false;
     private Rigidbody2D rb;
 
@@ -13,38 +15,38 @@ public class CharInput : MonoBehaviour
 
     [Header("Movements")]
     [SerializeField]
-    private int groundedMass = 1, nonGroundMass = 1;
+    private int groundedGrav = 1, nonGroundGrav = 3;
     [SerializeField]
     public float groundDrag = 5, airDrag = 0.5f;
     [SerializeField]
-    public int speed=5, airSpeed = 2, jumpForce =500;
+    public int speed=10, airSpeed = 2, jumpForce =800;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // changing mass dont affect fall speed
+        // change grav to make falling faster
         if (grounded)
         {
-            rb.mass=groundedMass;
+            rb.gravityScale = groundedGrav;
         }
         else
         {
-            rb.mass = nonGroundMass;
+            rb.gravityScale = nonGroundGrav;
         }
 
         /*
          * Movement
         */
         // moving
-        MoveChar(Input.GetAxis("Horizontal"));
+        MoveChar(moveInput);
 
         // jump
         if (Input.GetButtonDown("Jump") && grounded)
@@ -75,7 +77,14 @@ public class CharInput : MonoBehaviour
 
     /*
      * Movement methods
-    */  
+    */
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        //Debug.Log(context.ReadValue<Vector2>());
+        moveInput = (int)Mathf.Ceil(context.ReadValue<Vector2>().x);
+    }
+
     /// <summary>
     /// Moves char left/right
     /// </summary>
