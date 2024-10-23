@@ -6,9 +6,11 @@ using UnityEngine.InputSystem;
 public class CharInput : MonoBehaviour
 {
     private int moveInput=0;
+    private bool facingRight = true;
     private bool grounded=false;
     private Rigidbody2D rb;
 
+    public int FacingDir { get => facingRight ? 1:-1 ; }// returns char facing direction as 1/-1
     [Header("Grabbing/Throwing")]
     [SerializeField]
     private GameObject grabBox;
@@ -83,6 +85,10 @@ public class CharInput : MonoBehaviour
     {
         //Debug.Log(context.ReadValue<Vector2>());
         moveInput = (int)Mathf.Ceil(context.ReadValue<Vector2>().x);
+
+        // changes facing dir
+        if(moveInput>0) facingRight = true;
+        else if(moveInput<0) facingRight=false;
     }
 
     /*

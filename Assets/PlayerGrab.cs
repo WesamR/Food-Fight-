@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerGrab : MonoBehaviour
-{        
+{
+    private CharInput _charInput;
+
     public Transform grabPoint;  // Reference to the grab point on the player
     public float grabRange = 2f; // Distance the player can grab food
     private GameObject grabbedFood; // Currently held food
@@ -13,7 +15,8 @@ public class PlayerGrab : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        try { _charInput = GetComponent<CharInput>(); }
+        catch { Debug.Log("no charinput"); }
     }
 
     // Update is called once per frame
@@ -41,7 +44,7 @@ public class PlayerGrab : MonoBehaviour
         }
         else  // If already holding food, drop or throw it
         {
-            ThrowFood();
+            ThrowFood(_charInput.FacingDir);
         }
     }
 
@@ -72,7 +75,7 @@ public class PlayerGrab : MonoBehaviour
         }
     }
 
-    void ThrowFood()
+    void ThrowFood(int throwDir)
     {
         if (grabbedFood != null)
         {
@@ -83,7 +86,7 @@ public class PlayerGrab : MonoBehaviour
                 foodRb.isKinematic = false;
             }
             grabbedFood.transform.parent = null;
-            Vector2 throwDirection = new Vector2(transform.localScale.x, 0).normalized;
+            Vector2 throwDirection = new Vector2(transform.localScale.x*throwDir, 0).normalized;
             foodRb.AddForce(throwDirection * throwForce, ForceMode2D.Impulse);
             foodCol.enabled = true;
             grabbedFood = null;
