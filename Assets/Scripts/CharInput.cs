@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharInput : MonoBehaviour
 {
-    private bool grounded=false;
+    private bool grounded = false;
     private Rigidbody2D rb;
 
     [Header("Grabbing/Throwing")]
@@ -17,49 +17,41 @@ public class CharInput : MonoBehaviour
     [SerializeField]
     public float groundDrag = 5, airDrag = 0.5f;
     [SerializeField]
-    public int speed=5, airSpeed = 2, jumpForce =500;
+    public int speed = 5, airSpeed = 2, jumpForce = 500;
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Start is called before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;  // Freeze rotation to prevent toppling over
     }
 
     // Update is called once per frame
     void Update()
     {
-        // changing mass dont affect fall speed
         if (grounded)
         {
-            rb.mass=groundedMass;
+            rb.mass = groundedMass;
         }
         else
         {
             rb.mass = nonGroundMass;
         }
 
-        /*
-         * Movement
-        */
-        // moving
+        // Movement
         MoveChar(Input.GetAxis("Horizontal"));
 
-        // jump
+        // Jump
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            //rb.drag = airDrag;
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
         }
     }
 
-    /*
-     * Ground checking
-    */
+    // Ground checking
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
         }
@@ -67,26 +59,16 @@ public class CharInput : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = false;
         }
     }
 
-    /*
-     * Movement methods
-    */  
-    /// <summary>
-    /// Moves char left/right
-    /// </summary>
-    /// <param name="moveVal">1 right, -1 left</param>
-    private void MoveChar(float moveVal=0)
+    // Movement methods
+    private void MoveChar(float moveVal = 0)
     {
-        // linear drag changes so movement is slower mid air
-        // also the speed
-
-        // if directional buttons are pressed
-        if (moveVal!=0)
+        if (moveVal != 0)
         {
             if (grounded)
             {
@@ -96,26 +78,20 @@ public class CharInput : MonoBehaviour
             else
             {
                 rb.drag = airDrag;
-                // put limit on how fast chat go midair
-                if(rb.velocity.x<=speed)rb.AddForce(new Vector2(moveVal * airSpeed, 0));
+                if (Mathf.Abs(rb.velocity.x) <= speed)
+                {
+                    rb.AddForce(new Vector2(moveVal * airSpeed, 0));
+                }
             }
         }
         else
         {
-            //rb.AddForce(rb.velocity);
-            if (grounded) rb.drag = groundDrag;
-            else rb.drag = airDrag;
+            rb.drag = grounded ? groundDrag : airDrag;
         }
-
     }
 
     private void GrabItem()
     {
-        // spawn grab trigger
         Instantiate(grabBox);
-
-        // if multiple items pick closest or first in order
-
-        // have item follow char movement and disabled collision
     }
 }
