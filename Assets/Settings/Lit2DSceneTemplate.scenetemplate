@@ -66,7 +66,23 @@ MonoBehaviour:
     the 2D Renderer in Universal RP.
   preview: {fileID: -3604256930052969394}
   dependencies:
+  - dependency: {fileID: 2928903022585591411, guid: 5c688d0ac197aa3429b27c4cc08b17b1, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 6393777842527076718, guid: 3e6bc54fbc794a546b6b441e87774661, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 775750402364377978, guid: 4a8535c3a671ab94aabf30e46ad3c1f9, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 6835028841304615953, guid: f73751f1e918dc54eaf12b279c124878, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 9f3ee47bb70d4ce47941885d71cebbb8, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 7660b40d1800e9d4cbc840c07030de47, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 6ca8c74ed9d3e044dadb75bf23419b26, type: 3}
+    instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 748ae8b33df036b46a86e0387f1602cf, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 70df993518474404f8b8f8ee833a635f, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
     instantiationMode: 0
