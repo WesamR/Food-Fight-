@@ -1,74 +1,59 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharInput : MonoBehaviour
 {
+    private int moveInput=0;
     private bool grounded=false;
     private Rigidbody2D rb;
 
-    //[SerializeField]
-    public int speed;
-    public int jumpForce;
-    public int playerNumber;
-    string horizontal;
-    string jump;
+    [Header("Grabbing/Throwing")]
+    [SerializeField]
+    private GameObject grabBox;
+
+    [Header("Movements")]
+    [SerializeField]
+    private int groundedGrav = 1, nonGroundGrav = 3;
+    [SerializeField]
+    public float groundDrag = 5, airDrag = 0.5f;
+    [SerializeField]
+    public int speed=10, airSpeed = 2, jumpForce =800;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        // use playerNumber to determin horizontal and jump buttons
-        horizontal = "Horizontal" + playerNumber;
-        jump = "Jump" + playerNumber;
+        rb = GetComponent<Rigidbody2D>();;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // change grav to make falling faster
         if (grounded)
         {
-            rb.mass=1;
+            rb.gravityScale = groundedGrav;
         }
         else
         {
-            rb.mass = 20;
+            rb.gravityScale = nonGroundGrav;
         }
+
         /*
          * Movement
         */
+        // moving
+        MoveChar(moveInput);
 
-        // if directional buttons are pressed
-        if (Input.GetButtonDown(horizontal))
+        // jump
+        if (Input.GetButtonDown("Jump") && grounded)
         {
-            if (grounded) rb.drag = 1f;
-            else rb.drag = 0.5f;
+            //rb.drag = airDrag;
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
         }
-        //left
-        if (Input.GetAxis(horizontal) < 0)
-        {
-            rb.AddForce(new Vector2(-speed,0));
-        }
-        //right
-        else if (Input.GetAxis(horizontal) > 0)
-        {
-            rb.AddForce(new Vector2(speed, 0));
-        }
-        else
-        {
-            rb.AddForce(Vector2.zero);
-            rb.drag = 1f;
-        }
-
-        //jump
-        if (Input.GetButtonDown(jump) && grounded)
-        {
-            rb.drag = 0.5f;
-            rb.AddForce(new Vector2(0,jumpForce));
-        }
-
     }
 
     /*
@@ -88,5 +73,58 @@ public class CharInput : MonoBehaviour
         {
             grounded = false;
         }
+    }
+
+    /*
+     * Movement methods
+    */
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        //Debug.Log(context.ReadValue<Vector2>());
+        moveInput = (int)Mathf.Ceil(context.ReadValue<Vector2>().x);
+    }
+
+    /// <summary>
+    /// Moves char left/right
+    /// </summary>
+    /// <param name="moveVal">1 right, -1 left</param>
+    private void MoveChar(float moveVal=0)
+    {
+        // linear drag changes so movement is slower mid air
+        // also the speed
+
+        // if directional buttons are pressed
+        if (moveVal!=0)
+        {
+            if (grounded)
+            {
+                rb.drag = groundDrag;
+                rb.velocity = new Vector2(moveVal * speed, rb.velocity.y);
+            }
+            else
+            {
+                rb.drag = airDrag;
+                // put limit on how fast chat go midair
+                if(rb.velocity.x<=speed)rb.AddForce(new Vector2(moveVal * airSpeed, 0));
+            }
+        }
+        else
+        {
+            //rb.AddForce(rb.velocity);
+            if (grounded) rb.drag = groundDrag;
+            else rb.drag = airDrag;
+        }
+
+    }
+
+    private void GrabItem()
+    {
+        // spawn grab trigger
+        Instantiate(grabBox);
+
+        // if multiple items pick closest or first in order
+
+        // have item follow char movement and disabled collision
     }
 }
