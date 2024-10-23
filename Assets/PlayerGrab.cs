@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerGrab : MonoBehaviour
 {        
@@ -18,16 +19,28 @@ public class PlayerGrab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))  // Press 'E' to grab food
+        //if (Input.GetKeyDown(KeyCode.E))  // Press 'E' to grab food
+        //{
+        //    if (grabbedFood == null)  // If not holding food, try to grab it
+        //    {
+        //        TryGrabFood();
+        //    }
+        //    else  // If already holding food, drop or throw it
+        //    {
+        //        ThrowFood();
+        //    }
+        //}
+    }
+
+    public void GrabThrow(InputAction.CallbackContext context)
+    {
+        if (grabbedFood == null)  // If not holding food, try to grab it
         {
-            if (grabbedFood == null)  // If not holding food, try to grab it
-            {
-                TryGrabFood();
-            }
-            else  // If already holding food, drop or throw it
-            {
-                ThrowFood();
-            }
+            TryGrabFood();
+        }
+        else  // If already holding food, drop or throw it
+        {
+            ThrowFood();
         }
     }
 
