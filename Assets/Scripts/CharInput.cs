@@ -1,11 +1,18 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharInput : MonoBehaviour
 {
     private bool grounded=false;
     private Rigidbody2D rb;
+
+
+    public void PlayGame()
+    {
+        SceneManager.LoadSceneAsync("1");
+    }
 
     [SerializeField]
     public int speed=20,jumpForce =200;
