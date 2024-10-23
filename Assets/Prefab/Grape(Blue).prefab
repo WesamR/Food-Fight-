@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5174399927083584695}
   - component: {fileID: 6113037377136746988}
   - component: {fileID: -5418212614238176642}
+  - component: {fileID: -5180613775304492035}
   m_Layer: 0
   m_Name: Grape(Blue)
-  m_TagString: Untagged
+  m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,3 +167,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-5180613775304492035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6393777842527076718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba6206e822e3e64691dcaf8f3e09c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

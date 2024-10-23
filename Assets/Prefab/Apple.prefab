@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2154607571442229834}
   - component: {fileID: 5058284055696513128}
   - component: {fileID: 1077042213762284727}
+  - component: {fileID: 6559731158958419137}
   m_Layer: 0
   m_Name: Apple
-  m_TagString: Untagged
+  m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,3 +167,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6559731158958419137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928903022585591411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba6206e822e3e64691dcaf8f3e09c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
