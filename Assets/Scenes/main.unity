@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 141247338}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,9 +258,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004750879, y: -0.16}
+  m_Offset: {x: 0.010245314, y: -0.16}
   serializedVersion: 2
-  m_Radius: 0.20654538
+  m_Radius: 0.23485345
 --- !u!212 &141247336
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -322,8 +322,8 @@ Transform:
   m_GameObject: {fileID: 141247331}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.4997, y: -2.2648, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.3835, y: -2.5457, z: 0}
+  m_LocalScale: {x: 1.3633076, y: 1.8777465, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1393375252}
@@ -952,6 +952,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1721872553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2289322500077420296, guid: 4b932ac6232a907499fc8f4bb4bad808, type: 3}
+  m_PrefabInstance: {fileID: 1851253706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721872554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721872553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba6206e822e3e64691dcaf8f3e09c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1777099262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1186,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2289322500077420296, guid: 4b932ac6232a907499fc8f4bb4bad808, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1721872554}
   m_SourcePrefab: {fileID: 100100000, guid: 4b932ac6232a907499fc8f4bb4bad808, type: 3}
 --- !u!1 &1891207439
 GameObject:
@@ -1266,9 +1286,10 @@ GameObject:
   - component: {fileID: 2115587659}
   - component: {fileID: 2115587658}
   - component: {fileID: 2115587657}
+  - component: {fileID: 2115587660}
   m_Layer: 0
   m_Name: Fruit
-  m_TagString: Untagged
+  m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1363,6 +1384,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2115587660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115587656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba6206e822e3e64691dcaf8f3e09c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
