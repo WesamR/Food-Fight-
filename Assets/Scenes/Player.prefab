@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8974637668701500688}
   - component: {fileID: 890198913078545874}
   - component: {fileID: 6760981847913772479}
+  - component: {fileID: 2765659202009773386}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -186,7 +187,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6399999, y: 0.64000005}
+  m_Size: {x: 0.64, y: 0.64000005}
   m_Direction: 0
 --- !u!114 &8974637668701500688
 MonoBehaviour:
@@ -360,11 +361,39 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2765659202009773386}
+        m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
+        m_MethodName: Unalive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f4bd998b-875a-4ce9-937f-ea73b26a1a5b
+    m_ActionName: Player/Debug Button[/Keyboard/k,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2765659202009773386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623989817879573282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2ed0683bea5024b8df0121914d694c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8639388996522630941
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,9 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayersManager : MonoBehaviour
 {
+    public GameObject healthSystem;  // Reference to the player prefab
+    private List<GameObject> players = new List<GameObject>();  // List to store player instances
+
+    private void OnPlayerJoined(PlayerInput playerInput)
+    {
+        AddPlayer(playerInput.gameObject);
+    }
+
+    void AddPlayer(GameObject newPlayer)
+    {
+        //GameObject newPlayer = Instantiate(healthSystem, new Vector3(0, 0, 0), Quaternion.identity);
+        players.Add(newPlayer);
+        Debug.Log("Player joined");
+    }
+
+    void OnPlayerFed(GameObject player)
+    {
+        players.Remove(player);
+        Destroy(player);  // Optionally destroy the player object
+    }
+
+    void Update()
+    {
+        // Example usage: Check for incapacitated players
+        for (int i = players.Count - 1; i >= 0; i--)
+        {
+            if (players[i].GetComponent<HealthSystem>().IsDead)
+            {
+                OnPlayerFed(players[i]);
+            }
+        }
+    }
     //// Array to store player input information
     //public PlayerInput[] players;
 
