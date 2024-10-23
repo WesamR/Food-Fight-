@@ -34,6 +34,7 @@ public class PlayerGrab : MonoBehaviour
 
     public void GrabThrow(InputAction.CallbackContext context)
     {
+        if (!context.action.triggered) return;
         if (grabbedFood == null)  // If not holding food, try to grab it
         {
             TryGrabFood();
@@ -46,30 +47,30 @@ public class PlayerGrab : MonoBehaviour
 
 
     void TryGrabFood()
-{
-    Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, grabRange);
-    foreach (var hitCollider in hitColliders)
     {
-        if (hitCollider.CompareTag("Food"))
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, grabRange);
+        foreach (var hitCollider in hitColliders)
         {
-            grabbedFood = hitCollider.gameObject;
-            grabbedFood.transform.position = grabPoint.position;
-            grabbedFood.transform.parent = grabPoint;
-
-            Rigidbody2D foodRb = grabbedFood.GetComponent<Rigidbody2D>();
-            CircleCollider2D foodCol = grabbedFood.GetComponent<CircleCollider2D>();
-            if (foodRb != null)
+            if (hitCollider.CompareTag("Food"))
             {
-                foodRb.isKinematic = true; 
-                foodCol.enabled = false;
-                foodRb.velocity = Vector2.zero; // Ensure no residual forces
-            }
+                grabbedFood = hitCollider.gameObject;
+                grabbedFood.transform.position = grabPoint.position;
+                grabbedFood.transform.parent = grabPoint;
+
+                Rigidbody2D foodRb = grabbedFood.GetComponent<Rigidbody2D>();
+                CircleCollider2D foodCol = grabbedFood.GetComponent<CircleCollider2D>();
+                if (foodRb != null)
+                {
+                    foodRb.isKinematic = true; 
+                    foodCol.enabled = false;
+                    foodRb.velocity = Vector2.zero; // Ensure no residual forces
+                }
 
             
-            break;
+                break;
+            }
         }
     }
-}
 
     void ThrowFood()
     {
