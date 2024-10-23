@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5174399927083584695}
   - component: {fileID: 6113037377136746988}
   - component: {fileID: -5418212614238176642}
-  - component: {fileID: -5180613775304492035}
+  - component: {fileID: -6576735163295655455}
   m_Layer: 0
   m_Name: Grape(Blue)
   m_TagString: Fruit
@@ -167,7 +167,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5180613775304492035
+--- !u!114 &-6576735163295655455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6922177667292976330}
   - component: {fileID: 1289344209954405990}
   - component: {fileID: 1950011707349702140}
-  - component: {fileID: -316141262456743025}
+  - component: {fileID: -6971560532663691469}
   m_Layer: 0
   m_Name: Apple(Yellow).png
   m_TagString: Fruit
@@ -167,7 +167,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-316141262456743025
+--- !u!114 &-6971560532663691469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
