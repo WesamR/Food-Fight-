@@ -19,7 +19,7 @@ public class CharInput : MonoBehaviour
     [SerializeField]
     public float groundDrag = 5, airDrag = 0.5f;
     [SerializeField]
-    public int speed=10, airSpeed = 2, jumpForce =800;
+    public int speed=10, airSpeed = 2, jumpForce = 1;
 
 
 
@@ -49,11 +49,11 @@ public class CharInput : MonoBehaviour
         MoveChar(moveInput);
 
         // jump
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            //rb.drag = airDrag;
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
-        }
+        //if (Input.GetButtonDown("Jump") && grounded)
+        //{
+        //    //rb.drag = airDrag;
+        //    rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+        //}
     }
 
     /*
@@ -83,6 +83,23 @@ public class CharInput : MonoBehaviour
     {
         //Debug.Log(context.ReadValue<Vector2>());
         moveInput = (int)Mathf.Ceil(context.ReadValue<Vector2>().x);
+    }
+
+    /*
+     * Jump method
+     */
+    public void Jump(InputAction.CallbackContext context)
+    {
+        JumpChar();
+    }
+
+    private void JumpChar()
+    {
+        if (grounded)
+        {
+            //rb.drag = airDrag;
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+        }
     }
 
     /// <summary>
