@@ -85,6 +85,7 @@ public class PlayerGrab : MonoBehaviour
     {
         if (grabbedFood != null)
         {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
             Rigidbody2D foodRb = grabbedFood.GetComponent<Rigidbody2D>();
             CircleCollider2D foodCol = grabbedFood.GetComponent<CircleCollider2D>();
 
@@ -97,14 +98,27 @@ public class PlayerGrab : MonoBehaviour
             //float fX = GetComponent<Transform>().position.x + (throwPoint.transform.localPosition.x * throwDir);
             float fX = GetComponent<Transform>().position.x + ((GetComponent<CapsuleCollider2D>().size.x
                 + grabbedFood.GetComponent<CircleCollider2D>().radius + 0.1f) * facingDir);
+
             float fY = throwPoint.transform.position.y;
             grabbedFood.transform.position = new Vector3(fX, fY);//throwPoint.transform.position;
 
+            // adjust force
+            float force=0;
+            if((facingDir<0 && rb.velocity.x>0)|| (facingDir > 0 && rb.velocity.x < 0))
+            {
+                force = throwForce;
+            }
+            else
+            {
+                force = throwForce + rb.velocity.x;
+            }
+
             //Vector2 throwDirection = new Vector2(throwDir*throwForce, 0);
-            if (throwDir == Vector2.zero) foodRb.AddForce(new Vector2(facingDir * throwForce, 0), ForceMode2D.Impulse);
-            else foodRb.AddForce(throwDir * throwForce, ForceMode2D.Impulse);
+            if (throwDir == Vector2.zero) foodRb.AddForce(new Vector2(facingDir * force, 0), ForceMode2D.Impulse);
+            else foodRb.AddForce(throwDir * (force), ForceMode2D.Impulse);
             //foodRb.velocity = throwDirection;
             foodCol.enabled = true;
+            grabbedFood.GetComponent<FruitObj>().bulletState=true;
             grabbedFood = null;
         }
 

@@ -495,6 +495,8 @@ MonoBehaviour:
   secondSpawn: 1
   minTras: -5
   maxTras: 5
+  numberOfFood: 6
+  infinite: 0
 --- !u!4 &1143857656
 Transform:
   m_ObjectHideFlags: 0
@@ -766,11 +768,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8385806657238553964, guid: 4b932ac6232a907499fc8f4bb4bad808, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.67
       objectReference: {fileID: 0}
     - target: {fileID: 8385806657238553964, guid: 4b932ac6232a907499fc8f4bb4bad808, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.81
       objectReference: {fileID: 0}
     - target: {fileID: 8385806657238553964, guid: 4b932ac6232a907499fc8f4bb4bad808, type: 3}
       propertyPath: m_LocalPosition.z

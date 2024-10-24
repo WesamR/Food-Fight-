@@ -8,6 +8,7 @@ public class Fruit : MonoBehaviour
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
     public int numberOfFood;
+    public bool infinite = false;
 
     int counter=0;
     void Start()
@@ -24,7 +25,8 @@ public class Fruit : MonoBehaviour
             GameObject fruit = Instantiate(fruitPrefab[UnityEngine.Random.Range(0, fruitPrefab.Length)], position, Quaternion.identity);
             yield return new WaitForSeconds(secondSpawn);
             //Destroy(fruit, 3f);
-            counter++;
+           
+            if(!infinite) counter++;
         }
     }
 }

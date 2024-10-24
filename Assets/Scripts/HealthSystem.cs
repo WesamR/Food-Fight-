@@ -44,9 +44,12 @@ public class HealthSystem : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("Player collideded.");
-        if (collision.gameObject.CompareTag("Food"))
+        if (collision.gameObject.CompareTag("Food") )
         {
             FruitObj food = collision.gameObject.GetComponent<FruitObj>();
+
+            if (!food.bulletState) return;
+
             if (food != null)
             {
                 int propertyValue = food.calories; // Replace 'property' with the actual property name

@@ -287,7 +287,7 @@ MonoBehaviour:
   grabPoint: {fileID: 8724106181830256657}
   throwPoint: {fileID: 4462981512579030608}
   grabRange: 2
-  throwForce: 100
+  throwForce: 10
 --- !u!114 &240211290077700546
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da99278e7e8a6ba4a9e82aebcfce6d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletState: 0
+  bulletState: 1
+  calories: 10
 --- !u!58 &8630468729161935136
 CircleCollider2D:
   m_ObjectHideFlags: 0
