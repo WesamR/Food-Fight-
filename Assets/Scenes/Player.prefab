@@ -394,6 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2ed0683bea5024b8df0121914d694c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCalories: 0
+  maxCalories: 10000
 --- !u!1 &8639388996522630941
 GameObject:
   m_ObjectHideFlags: 0
