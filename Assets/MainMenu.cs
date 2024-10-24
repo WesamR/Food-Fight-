@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
      void PlayGame()
     {
-        SceneManager.LoadSceneAsync("MapFunction");
+        SceneManager.LoadSceneAsync(1);
     }
 
     // Update is called once per frame
