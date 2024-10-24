@@ -5,15 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Fruit
+  - Food
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - BuildingBlocks
+  - 
   - Water
   - UI
-  - Player
+  - 
   - 
   - 
   - 

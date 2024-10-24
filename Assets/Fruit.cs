@@ -7,7 +7,10 @@ public class Fruit : MonoBehaviour
     [SerializeField] float secondSpawn = 5f;
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
+    public int numberOfFood;
+    public bool infinite = false;
 
+    int counter=0;
     void Start()
     {
         StartCoroutine(FruitSpawn());
@@ -15,17 +18,15 @@ public class Fruit : MonoBehaviour
 
     IEnumerator FruitSpawn()
     {
-        while (true)
+        while (counter< numberOfFood)
         {
-            var wanted = UnityEngine.Random.Range(minTras, maxTras);
+            var wanted = UnityEngine.Random.Range(minTras, 5);
             var position = new Vector2(wanted, transform.position.y);
             GameObject fruit = Instantiate(fruitPrefab[UnityEngine.Random.Range(0, fruitPrefab.Length)], position, Quaternion.identity);
-            // Add CircleCollider2D to the fruit
-            fruit.AddComponent<CircleCollider2D>();
-            fruit.AddComponent<Rigidbody2D>().isKinematic = true;  // Corrected the spelling and added isKinematic
-
             yield return new WaitForSeconds(secondSpawn);
-            Destroy(fruit, 3f);
+            //Destroy(fruit, 3f);
+           
+            if(!infinite) counter++;
         }
     }
 }
