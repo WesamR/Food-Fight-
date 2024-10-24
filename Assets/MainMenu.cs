@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     void Start()
+<<<<<<< Updated upstream
+    {
+        
+    }
+
+    public void PlayGame()
+=======
+>>>>>>> Stashed changes
     {
         
     }
@@ -13,6 +21,12 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("FruitSpawnScene");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     // Update is called once per frame
