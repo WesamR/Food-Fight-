@@ -96,7 +96,8 @@ public class CharInput : MonoBehaviour
      */
     public void Jump(InputAction.CallbackContext context)
     {
-        JumpChar();
+        if (context.performed)
+            JumpChar();
     }
 
     private void JumpChar()
