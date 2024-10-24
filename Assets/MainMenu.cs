@@ -6,21 +6,14 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     void Start()
-<<<<<<< Updated upstream
     {
         
-    }
+    } 
+    
 
-    public void PlayGame()
-=======
->>>>>>> Stashed changes
+     void PlayGame()
     {
-        
-    }
-
-    public void PlayGame()
-    {
-        SceneManager.LoadSceneAsync("FruitSpawnScene");
+        SceneManager.LoadSceneAsync("MapFunction");
     }
 
     // Update is called once per frame
@@ -29,13 +22,7 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void QuitGame()
+     void QuitGame()
     {
         Application.Quit();
     }
