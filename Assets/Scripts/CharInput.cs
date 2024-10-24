@@ -1,13 +1,23 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharInput : MonoBehaviour
 {
     private bool grounded = false;
     private Rigidbody2D rb;
 
+<<<<<<< HEAD
+
+    public void PlayGame()
+    {
+        SceneManager.LoadSceneAsync("1");
+    }
+
+=======
     [Header("Grabbing/Throwing")]
+>>>>>>> 903fa042ef250dd71b35054c88e06507a15ed455
     [SerializeField]
     private GameObject grabBox;
 
