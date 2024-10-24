@@ -8,6 +8,7 @@ public class PlayerGrab : MonoBehaviour
     private CharInput _charInput;
 
     public Transform grabPoint;  // Reference to the grab point on the player
+    public Transform throwPoint;
     public float grabRange = 2f; // Distance the player can grab food
     private GameObject grabbedFood; // Currently held food
     public float throwForce = 10f; 
@@ -81,17 +82,24 @@ public class PlayerGrab : MonoBehaviour
         {
             Rigidbody2D foodRb = grabbedFood.GetComponent<Rigidbody2D>();
             CircleCollider2D foodCol = grabbedFood.GetComponent<CircleCollider2D>();
+
             if (foodRb != null)
             {
                 foodRb.isKinematic = false;
             }
-            grabbedFood.transform.parent = null;
+
+            // put food outside of player collider
+            //float fX = GetComponent<Transform>().position.x + (throwPoint.transform.localPosition.x * throwDir);
+            float fX = GetComponent<Transform>().position.x + ((GetComponent<CapsuleCollider2D>().size.x
+                +grabbedFood.GetComponent<CircleCollider2D>().radius+0.1f) * throwDir);
+            float fY = throwPoint.transform.position.y;
+            grabbedFood.transform.position = new Vector3(fX,fY);//throwPoint.transform.position;
+
             Vector2 throwDirection = new Vector2(throwDir*throwForce, 0);
-            //foodRb.AddForce(throwDirection, ForceMode2D.Impulse);
-            foodRb.velocity = throwDirection;
+            foodRb.AddForce(throwDirection, ForceMode2D.Impulse);
+            //foodRb.velocity = throwDirection;
             foodCol.enabled = true;
             grabbedFood = null;
-
         }
 
     }
