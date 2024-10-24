@@ -86,8 +86,9 @@ public class PlayerGrab : MonoBehaviour
                 foodRb.isKinematic = false;
             }
             grabbedFood.transform.parent = null;
-            Vector2 throwDirection = new Vector2(transform.localScale.x*throwDir, 0).normalized;
-            foodRb.AddForce(throwDirection * throwForce, ForceMode2D.Impulse);
+            Vector2 throwDirection = new Vector2(throwDir*throwForce, 0);
+            //foodRb.AddForce(throwDirection, ForceMode2D.Impulse);
+            foodRb.velocity = throwDirection;
             foodCol.enabled = true;
             grabbedFood = null;
 

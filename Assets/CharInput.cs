@@ -129,7 +129,7 @@ public class CharInput : MonoBehaviour
             {
                 rb.drag = airDrag;
                 // put limit on how fast chat go midair
-                if(rb.velocity.x<=speed)rb.AddForce(new Vector2(moveVal * airSpeed, 0));
+                if(Mathf.Abs(rb.velocity.x)<=speed)rb.AddForce(new Vector2(moveVal * airSpeed, 0));
             }
         }
         else
