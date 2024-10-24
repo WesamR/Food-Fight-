@@ -5,24 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class CharInput : MonoBehaviour
 {
-    private bool grounded=false;
+    private bool grounded = false;
     private Rigidbody2D rb;
 
+<<<<<<< HEAD
 
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("1");
     }
 
+=======
+    [Header("Grabbing/Throwing")]
+>>>>>>> 903fa042ef250dd71b35054c88e06507a15ed455
     [SerializeField]
-    public int speed=20,jumpForce =200;
+    private GameObject grabBox;
 
+    [Header("Movements")]
+    [SerializeField]
+    private int groundedMass = 1, nonGroundMass = 1;
+    [SerializeField]
+    public float groundDrag = 5, airDrag = 0.5f;
+    [SerializeField]
+    public int speed = 5, airSpeed = 2, jumpForce = 500;
 
+    public Psound pam;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Start is called before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;  // Freeze rotation to prevent toppling over
+        pam = GetComponent<Psound>();
     }
 
     // Update is called once per frame
@@ -30,53 +44,28 @@ public class CharInput : MonoBehaviour
     {
         if (grounded)
         {
-            rb.mass=1;
+            rb.mass = groundedMass;
         }
         else
         {
-            rb.mass = 20;
-        }
-        /*
-         * Movement
-        */
-
-        // if directional buttons are pressed
-        if (Input.GetButtonDown("Horizontal"))
-        {
-            if (grounded) rb.drag = 1f;
-            else rb.drag = 0.5f;
-        }
-        //left
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            rb.AddForce(new Vector2(-speed,0));
-        }
-        //right
-        else if (Input.GetAxis("Horizontal") > 0)
-        {
-            rb.AddForce(new Vector2(speed, 0));
-        }
-        else
-        {
-            rb.AddForce(Vector2.zero);
-            rb.drag = 1f;
+            rb.mass = nonGroundMass;
         }
 
-        //jump
+        // Movement
+        MoveChar(Input.GetAxis("Horizontal"));
+
+        // Jump
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            rb.drag = 0.5f;
-            rb.AddForce(new Vector2(0,jumpForce));
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+            pam.jumpSound();
         }
-
     }
 
-    /*
-     * Ground checking
-    */
+    // Ground checking
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
         }
@@ -84,9 +73,39 @@ public class CharInput : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = false;
         }
+    }
+
+    // Movement methods
+    private void MoveChar(float moveVal = 0)
+    {
+        if (moveVal != 0)
+        {
+            if (grounded)
+            {
+                rb.drag = groundDrag;
+                rb.velocity = new Vector2(moveVal * speed, rb.velocity.y);
+            }
+            else
+            {
+                rb.drag = airDrag;
+                if (Mathf.Abs(rb.velocity.x) <= speed)
+                {
+                    rb.AddForce(new Vector2(moveVal * airSpeed, 0));
+                }
+            }
+        }
+        else
+        {
+            rb.drag = grounded ? groundDrag : airDrag;
+        }
+    }
+
+    private void GrabItem()
+    {
+        Instantiate(grabBox);
     }
 }
