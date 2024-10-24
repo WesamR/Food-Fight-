@@ -51,7 +51,7 @@ public class PlayerGrab : MonoBehaviour
     }
     public void Aim(InputAction.CallbackContext context)
     {
-        //if(context.action.triggered)Debug.Log(context.ReadValue<Vector2>());
+        Debug.Log(context.ReadValue<Vector2>());
         throwDir = context.ReadValue<Vector2>();
     }
 
@@ -101,7 +101,8 @@ public class PlayerGrab : MonoBehaviour
             grabbedFood.transform.position = new Vector3(fX,fY);//throwPoint.transform.position;
 
             //Vector2 throwDirection = new Vector2(throwDir*throwForce, 0);
-            foodRb.AddForce(throwDir * throwForce, ForceMode2D.Impulse);
+            if(throwDir == Vector2.zero) foodRb.AddForce(new Vector2(facingDir * throwForce,0), ForceMode2D.Impulse);
+            else foodRb.AddForce(throwDir * throwForce, ForceMode2D.Impulse);
             //foodRb.velocity = throwDirection;
             foodCol.enabled = true;
             grabbedFood = null;

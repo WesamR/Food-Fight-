@@ -21,7 +21,7 @@ public class CharInput : MonoBehaviour
     [SerializeField]
     public float groundDrag = 5, airDrag = 0.5f;
     [SerializeField]
-    public int speed=10, airSpeed = 50, jumpForce = 1;
+    public int speed=6, airSpeed = 50, jumpForce = 800;
 
 
 
@@ -84,7 +84,7 @@ public class CharInput : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         //Debug.Log(context.ReadValue<Vector2>());
-        moveInput = (int)Mathf.Ceil(context.ReadValue<Vector2>().x);
+        moveInput = (int)Mathf.Round(context.ReadValue<Vector2>().x);
 
         // changes facing dir
         if(moveInput>0) facingRight = true;
