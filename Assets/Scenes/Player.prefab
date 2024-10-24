@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 5974337354909727235}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -269,13 +269,8 @@ MonoBehaviour:
   nonGroundGrav: 3
   groundDrag: 5
   airDrag: 0.5
-<<<<<<< Updated upstream
-  speed: 4
-  airSpeed: 2
-=======
   speed: 10
   airSpeed: 50
->>>>>>> Stashed changes
   jumpForce: 800
 --- !u!114 &6583410795912837689
 MonoBehaviour:
@@ -292,7 +287,7 @@ MonoBehaviour:
   grabPoint: {fileID: 8724106181830256657}
   throwPoint: {fileID: 4462981512579030608}
   grabRange: 2
-  throwForce: 10
+  throwForce: 100
 --- !u!114 &240211290077700546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 992b9133bdd75104991e24827849dca3, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: a4f3c82cd0adddd4184442a9734853c5, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -456,8 +451,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: f4bd998b-875a-4ce9-937f-ea73b26a1a5b
-    m_ActionName: Player/Debug Button[/Keyboard/k,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down]
+    m_ActionId: eff61361-7296-4977-9084-abcfd03a5c3d
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayersManager : MonoBehaviour
 {
-    public GameObject healthSystem;  // Reference to the player prefab
+    //public GameObject healthSystem;  // Reference to the player prefab
     private List<GameObject> players = new List<GameObject>();  // List to store player instances
 
     private void OnPlayerJoined(PlayerInput playerInput)

@@ -12,7 +12,7 @@ public class PlayerGrab : MonoBehaviour
     public Transform throwPoint;
     public float grabRange = 2f; // Distance the player can grab food
     private GameObject grabbedFood; // Currently held food
-    public float throwForce = 10f; 
+    public float throwForce = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +46,7 @@ public class PlayerGrab : MonoBehaviour
         }
         else  // If already holding food, drop or throw it
         {
-            ThrowFood(throwDir,_charInput.FacingDir);
+            ThrowFood(throwDir, _charInput.FacingDir);
         }
     }
     public void Aim(InputAction.CallbackContext context)
@@ -70,18 +70,18 @@ public class PlayerGrab : MonoBehaviour
                 CircleCollider2D foodCol = grabbedFood.GetComponent<CircleCollider2D>();
                 if (foodRb != null)
                 {
-                    foodRb.isKinematic = true; 
+                    foodRb.isKinematic = true;
                     foodCol.enabled = false;
                     foodRb.velocity = Vector2.zero; // Ensure no residual forces
                 }
 
-            
+
                 break;
             }
         }
     }
 
-    void ThrowFood(Vector2 throwDir,int facingDir)
+    void ThrowFood(Vector2 throwDir, int facingDir)
     {
         if (grabbedFood != null)
         {
@@ -96,12 +96,12 @@ public class PlayerGrab : MonoBehaviour
             // put food outside of player collider
             //float fX = GetComponent<Transform>().position.x + (throwPoint.transform.localPosition.x * throwDir);
             float fX = GetComponent<Transform>().position.x + ((GetComponent<CapsuleCollider2D>().size.x
-                +grabbedFood.GetComponent<CircleCollider2D>().radius+0.1f) * facingDir);
+                + grabbedFood.GetComponent<CircleCollider2D>().radius + 0.1f) * facingDir);
             float fY = throwPoint.transform.position.y;
-            grabbedFood.transform.position = new Vector3(fX,fY);//throwPoint.transform.position;
+            grabbedFood.transform.position = new Vector3(fX, fY);//throwPoint.transform.position;
 
             //Vector2 throwDirection = new Vector2(throwDir*throwForce, 0);
-            if(throwDir == Vector2.zero) foodRb.AddForce(new Vector2(facingDir * throwForce,0), ForceMode2D.Impulse);
+            if (throwDir == Vector2.zero) foodRb.AddForce(new Vector2(facingDir * throwForce, 0), ForceMode2D.Impulse);
             else foodRb.AddForce(throwDir * throwForce, ForceMode2D.Impulse);
             //foodRb.velocity = throwDirection;
             foodCol.enabled = true;

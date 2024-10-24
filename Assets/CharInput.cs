@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class CharInput : MonoBehaviour
 {
-    private int moveInput=0;
+    private int moveInput = 0;
     private bool facingRight = true;
-    private bool grounded=false;
+    private bool grounded = false;
     private Rigidbody2D rb;
 
-    public int FacingDir { get => facingRight ? 1:-1 ; }// returns char facing direction as 1/-1
+    public int FacingDir { get => facingRight ? 1 : -1; }// returns char facing direction as 1/-1
     [Header("Grabbing/Throwing")]
     [SerializeField]
     private GameObject grabBox;
@@ -21,14 +21,14 @@ public class CharInput : MonoBehaviour
     [SerializeField]
     public float groundDrag = 5, airDrag = 0.5f;
     [SerializeField]
-    public int speed=6, airSpeed = 50, jumpForce = 800;
+    public int speed = 6, airSpeed = 50, jumpForce = 800;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();;
+        rb = GetComponent<Rigidbody2D>(); ;
     }
 
     // Update is called once per frame
@@ -63,7 +63,7 @@ public class CharInput : MonoBehaviour
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             grounded = true;
         }
@@ -87,8 +87,8 @@ public class CharInput : MonoBehaviour
         moveInput = (int)Mathf.Round(context.ReadValue<Vector2>().x);
 
         // changes facing dir
-        if(moveInput>0) facingRight = true;
-        else if(moveInput<0) facingRight=false;
+        if (moveInput > 0) facingRight = true;
+        else if (moveInput < 0) facingRight = false;
     }
 
     /*
@@ -113,13 +113,13 @@ public class CharInput : MonoBehaviour
     /// Moves char left/right
     /// </summary>
     /// <param name="moveVal">1 right, -1 left</param>
-    private void MoveChar(float moveVal=0)
+    private void MoveChar(float moveVal = 0)
     {
         // linear drag changes so movement is slower mid air
         // also the speed
 
         // if directional buttons are pressed
-        if (moveVal!=0)
+        if (moveVal != 0)
         {
             if (grounded)
             {
@@ -131,7 +131,7 @@ public class CharInput : MonoBehaviour
                 rb.drag = airDrag;
 
                 // put limit on how fast chat go midair
-                if(Mathf.Abs(rb.velocity.x)<=speed)rb.AddForce(new Vector2(moveVal * airSpeed, 0));
+                if (Mathf.Abs(rb.velocity.x) <= speed) rb.AddForce(new Vector2(moveVal * airSpeed, 0));
             }
         }
         else
