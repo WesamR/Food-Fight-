@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 82073208238469891, guid: 4b932ac6232a907499fc8f4bb4bad808, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2289322500077420296, guid: 4b932ac6232a907499fc8f4bb4bad808, type: 3}
       propertyPath: m_Name
       value: FruitObj
