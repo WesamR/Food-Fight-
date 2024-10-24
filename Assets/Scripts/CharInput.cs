@@ -19,11 +19,14 @@ public class CharInput : MonoBehaviour
     [SerializeField]
     public int speed = 5, airSpeed = 2, jumpForce = 500;
 
+    public Psound pam;
+
     // Start is called before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;  // Freeze rotation to prevent toppling over
+        pam = GetComponent<Psound>();
     }
 
     // Update is called once per frame
@@ -45,6 +48,7 @@ public class CharInput : MonoBehaviour
         if (Input.GetButtonDown("Jump") && grounded)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+            pam.jumpSound();
         }
     }
 
