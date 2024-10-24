@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,7 +16,7 @@ public class PlayersManager : MonoBehaviour
     {
         //GameObject newPlayer = Instantiate(healthSystem, new Vector3(0, 0, 0), Quaternion.identity);
         players.Add(newPlayer);
-        Debug.Log("Player joined");
+        //Debug.Log("Player joined");
     }
 
     void OnPlayerFed(GameObject player)
