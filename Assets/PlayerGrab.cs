@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerGrab : MonoBehaviour
 {
     private CharInput _charInput;
+    private Vector2 throwDir;
 
     public Transform grabPoint;  // Reference to the grab point on the player
     public Transform throwPoint;
@@ -45,10 +46,14 @@ public class PlayerGrab : MonoBehaviour
         }
         else  // If already holding food, drop or throw it
         {
-            ThrowFood(_charInput.FacingDir);
+            ThrowFood(throwDir,_charInput.FacingDir);
         }
     }
-
+    public void Aim(InputAction.CallbackContext context)
+    {
+        //if(context.action.triggered)Debug.Log(context.ReadValue<Vector2>());
+        throwDir = context.ReadValue<Vector2>();
+    }
 
     void TryGrabFood()
     {
@@ -76,7 +81,7 @@ public class PlayerGrab : MonoBehaviour
         }
     }
 
-    void ThrowFood(int throwDir)
+    void ThrowFood(Vector2 throwDir,int facingDir)
     {
         if (grabbedFood != null)
         {
@@ -91,12 +96,12 @@ public class PlayerGrab : MonoBehaviour
             // put food outside of player collider
             //float fX = GetComponent<Transform>().position.x + (throwPoint.transform.localPosition.x * throwDir);
             float fX = GetComponent<Transform>().position.x + ((GetComponent<CapsuleCollider2D>().size.x
-                +grabbedFood.GetComponent<CircleCollider2D>().radius+0.1f) * throwDir);
+                +grabbedFood.GetComponent<CircleCollider2D>().radius+0.1f) * facingDir);
             float fY = throwPoint.transform.position.y;
             grabbedFood.transform.position = new Vector3(fX,fY);//throwPoint.transform.position;
 
-            Vector2 throwDirection = new Vector2(throwDir*throwForce, 0);
-            foodRb.AddForce(throwDirection, ForceMode2D.Impulse);
+            //Vector2 throwDirection = new Vector2(throwDir*throwForce, 0);
+            foodRb.AddForce(throwDir * throwForce, ForceMode2D.Impulse);
             //foodRb.velocity = throwDirection;
             foodCol.enabled = true;
             grabbedFood = null;
