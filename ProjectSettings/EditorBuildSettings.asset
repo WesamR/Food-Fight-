@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 0ec6e86c064f34c419430a8542658ee0
   - enabled: 1
-    path: Assets/Scenes/FruitSpawnDestroy.unity
+    path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: a4f3c82cd0adddd4184442a9734853c5, type: 3}
