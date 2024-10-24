@@ -10,6 +10,7 @@ public class PlayersManager : MonoBehaviour
     private void OnPlayerJoined(PlayerInput playerInput)
     {
         AddPlayer(playerInput.gameObject);
+        Debug.Log(playerInput.gameObject);
     }
 
     void AddPlayer(GameObject newPlayer)
@@ -23,6 +24,7 @@ public class PlayersManager : MonoBehaviour
     {
         players.Remove(player);
         Destroy(player);  // Optionally destroy the player object
+
     }
 
     void Update()
