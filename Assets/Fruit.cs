@@ -7,6 +7,7 @@ public class Fruit : MonoBehaviour
     [SerializeField] float secondSpawn = 5f;
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
+    public int numberOfFood;
 
     int counter=0;
     void Start()
@@ -16,7 +17,7 @@ public class Fruit : MonoBehaviour
 
     IEnumerator FruitSpawn()
     {
-        while (counter<5)
+        while (counter< numberOfFood)
         {
             var wanted = UnityEngine.Random.Range(minTras, 5);
             var position = new Vector2(wanted, transform.position.y);

@@ -5,5 +5,6 @@ using UnityEngine;
 public class FruitObj : MonoBehaviour
 {
     public bool bulletState = false; 
+    public int calories = 10;
 
 }

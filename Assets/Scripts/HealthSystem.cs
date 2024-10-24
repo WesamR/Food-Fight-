@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class HealthSystem : MonoBehaviour
 {
     public int currentCalories;
-    public int maxCalories = 10000;
+    public int maxCalories = 100;
     private bool isDead = false;
 
     private GameObject caloriesDisplayObject;
@@ -40,6 +40,22 @@ public class HealthSystem : MonoBehaviour
         caloriesTextMesh.text = currentCalories + "/" + maxCalories;
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Debug.Log("Player collideded.");
+        if (collision.gameObject.CompareTag("Food"))
+        {
+            FruitObj food = collision.gameObject.GetComponent<FruitObj>();
+            if (food != null)
+            {
+                int propertyValue = food.calories; // Replace 'property' with the actual property name
+                Eat(propertyValue);
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+
 
     /// <summary>
     /// This method is called when the player eats food.

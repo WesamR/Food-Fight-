@@ -271,7 +271,7 @@ MonoBehaviour:
   airDrag: 0.5
   speed: 4
   airSpeed: 2
-  jumpForce: 400
+  jumpForce: 800
 --- !u!114 &6583410795912837689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,4 +459,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCalories: 0
-  maxCalories: 10000
+  maxCalories: 100
