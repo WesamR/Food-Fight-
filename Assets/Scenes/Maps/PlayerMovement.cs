@@ -1,23 +1,71 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    private Vector2 movement;
+    private Rigidbody2D rb;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float jumpForce = 10f;
+    private bool grounded = false;
+    private AudioSource audioSource;
+
+    // Audio clips
+    public AudioClip moveSound;
+    public AudioClip jumpSound;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
-        // Input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        Move();
+        Jump();
     }
 
-    void FixedUpdate()
+    private void Move()
     {
-        // Movement
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        float moveInput = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+
+        if (moveInput != 0)
+        {
+            PlaySound(moveSound);
+        }
+    }
+
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && grounded)
+        {
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            PlaySound(jumpSound);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = false;
+        }
+    }
+
+    void PlaySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 }

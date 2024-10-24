@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 748ae8b33df036b46a86e0387f1602cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -201,14 +201,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03fec12da6c103488201ee3964f09aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grounded: 0
   grabBox: {fileID: 0}
   groundedGrav: 1
   nonGroundGrav: 3
   groundDrag: 5
   airDrag: 0.5
   speed: 4
-  airSpeed: 50
+  airSpeed: 2
   jumpForce: 400
 --- !u!114 &890198913078545874
 MonoBehaviour:
@@ -378,10 +377,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f4bd998b-875a-4ce9-937f-ea73b26a1a5b
     m_ActionName: Player/Debug Button[/Keyboard/k,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d3b0c0a6-b853-49c6-b695-ef84afa7441a
-    m_ActionName: New action map/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

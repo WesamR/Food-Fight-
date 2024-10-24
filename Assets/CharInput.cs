@@ -7,7 +7,7 @@ public class CharInput : MonoBehaviour
 {
     private int moveInput=0;
     private bool facingRight = true;
-    private bool grounded=false;
+    public bool grounded=false;
     private Rigidbody2D rb;
 
     public int FacingDir { get => facingRight ? 1:-1 ; }// returns char facing direction as 1/-1
