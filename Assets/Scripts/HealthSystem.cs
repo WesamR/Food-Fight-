@@ -89,7 +89,8 @@ public class HealthSystem : MonoBehaviour
     /// <param name="context"></param>
     public void Unalive(InputAction.CallbackContext context)
     {
-        Eat(10);
+        if (context.performed)
+            Eat(10);
         //isDead = true;
         //Debug.Log("Player is dead");
     }

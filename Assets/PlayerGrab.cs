@@ -51,7 +51,7 @@ public class PlayerGrab : MonoBehaviour
     }
     public void Aim(InputAction.CallbackContext context)
     {
-        Debug.Log(context.ReadValue<Vector2>());
+        //Debug.Log(context.ReadValue<Vector2>());
         throwDir = context.ReadValue<Vector2>();
     }
 

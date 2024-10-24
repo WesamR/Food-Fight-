@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 6583410795912837689}
   - component: {fileID: 240211290077700546}
   - component: {fileID: 8374211429106502304}
+  - component: {fileID: -5727180130906091147}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -472,3 +473,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCalories: 0
   maxCalories: 100
+--- !u!114 &-5727180130906091147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258567875968291855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa96db3efbef5e489a19c47042ba245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeader: 0
+  crownText: {fileID: 0}
