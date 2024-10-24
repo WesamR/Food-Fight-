@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 06af6410a61bcf4498f8afccb7967162
+guid: 0c9df5630691e204391ab8c7cbcc004d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,91 +95,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: run_chef_right_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 385.25
-        height: 426
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b337ea5d2911ca84dacbc92361c34aac
-      internalID: 1550321090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: run_chef_right_1
-      rect:
-        serializedVersion: 2
-        x: 385
-        y: 0
-        width: 385.25
-        height: 426
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36e398a9b493d2f44b1bb09bca4a8740
-      internalID: -1201290652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: run_chef_right_2
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 0
-        width: 385.25
-        height: 426
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b159e039fbe7cb144b5d3ea2cb1e75f8
-      internalID: -1720919304
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: run_chef_right_3
-      rect:
-        serializedVersion: 2
-        x: 1155
-        y: 0
-        width: 385.25
-        height: 426
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5380ed42e446e7b4facd1f60dbbb60b9
-      internalID: 1902565137
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -190,11 +106,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      run_chef_right_0: 1550321090
-      run_chef_right_1: -1201290652
-      run_chef_right_2: -1720919304
-      run_chef_right_3: 1902565137
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
