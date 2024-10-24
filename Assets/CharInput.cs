@@ -21,7 +21,7 @@ public class CharInput : MonoBehaviour
     [SerializeField]
     public float groundDrag = 5, airDrag = 0.5f;
     [SerializeField]
-    public int speed=10, airSpeed = 2, jumpForce = 800;
+    public int speed=10, airSpeed = 50, jumpForce = 1;
 
 
 
