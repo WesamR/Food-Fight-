@@ -479,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCalories: 0
   maxCalories: 100
+  isWinner: 0
   ani: {fileID: 0}
   pam2: {fileID: 0}
 --- !u!114 &-5727180130906091147
@@ -509,7 +510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpSound: {fileID: 8300000, guid: e13b1b3ecf7b5454a8393569ed328c39, type: 3}
   Throw: {fileID: 8300000, guid: 34e3ef7f5178c49d49d923fb5de07a51, type: 3}
-  Eat: {fileID: 8300000, guid: 65bba392c2a254acca33ecd25e719ec9, type: 3}
+  Eat: {fileID: 8300000, guid: 262ff789a29bb48f78e8451ab06ef988, type: 3}
 --- !u!95 &8855802473019597420
 Animator:
   serializedVersion: 5
