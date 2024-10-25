@@ -9,11 +9,14 @@ public class HealthSystem : MonoBehaviour
 
     private GameObject caloriesDisplayObject;
     private TextMesh caloriesTextMesh;
-
+    public Animator ani;
+    public Psound pam2;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        ani= GetComponent<Animator>();
         // Create a new GameObject for the TextMesh
         caloriesDisplayObject = new GameObject("CaloriesDisplay");
         caloriesTextMesh = caloriesDisplayObject.AddComponent<TextMesh>();
@@ -32,6 +35,8 @@ public class HealthSystem : MonoBehaviour
 
         // Position the TextMesh above the player character
         caloriesDisplayObject.transform.localPosition = new Vector3(0, 1, 0);
+
+         pam2 = GetComponent<Psound>();
     }
 
     // Update is called once per frame
@@ -56,7 +61,9 @@ public class HealthSystem : MonoBehaviour
             {
                 int propertyValue = food.calories; // Replace 'property' with the actual property name
                 Eat(propertyValue);
-                Destroy(collision.gameObject);
+                ani.SetBool("isSleeping",!food);
+                //Destroy(collision.gameObject);
+                
             }
         }
     }
@@ -70,10 +77,13 @@ public class HealthSystem : MonoBehaviour
     public void Eat(int calories)
     {
         currentCalories += calories;
+        pam2.EatSound();
         if (currentCalories >= maxCalories)
         {
+
             currentCalories = maxCalories;
             isDead = true;
+            
         }
     }
 

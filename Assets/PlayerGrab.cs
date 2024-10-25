@@ -13,12 +13,14 @@ public class PlayerGrab : MonoBehaviour
     public float grabRange = 2f; // Distance the player can grab food
     private GameObject grabbedFood; // Currently held food
     public float throwForce = 100f;
+    public Psound pam1;
 
     // Start is called before the first frame update
     void Start()
     {
         try { _charInput = GetComponent<CharInput>(); }
         catch { Debug.Log("no charinput"); }
+         pam1 = GetComponent<Psound>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class PlayerGrab : MonoBehaviour
         else  // If already holding food, drop or throw it
         {
             ThrowFood(throwDir, _charInput.FacingDir);
+            pam1.ThrowSound();
         }
     }
     public void Aim(InputAction.CallbackContext context)

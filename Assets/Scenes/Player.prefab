@@ -294,6 +294,7 @@ MonoBehaviour:
   throwPoint: {fileID: 4462981512579030608}
   grabRange: 2
   throwForce: 50
+  pam1: {fileID: 0}
 --- !u!114 &240211290077700546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +479,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCalories: 0
   maxCalories: 100
+  ani: {fileID: 0}
+  pam2: {fileID: 0}
 --- !u!114 &-5727180130906091147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +508,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpSound: {fileID: 8300000, guid: e13b1b3ecf7b5454a8393569ed328c39, type: 3}
+  Throw: {fileID: 8300000, guid: 34e3ef7f5178c49d49d923fb5de07a51, type: 3}
+  Eat: {fileID: 8300000, guid: 65bba392c2a254acca33ecd25e719ec9, type: 3}
 --- !u!95 &8855802473019597420
 Animator:
   serializedVersion: 5
