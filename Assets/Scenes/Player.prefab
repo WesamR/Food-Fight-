@@ -253,8 +253,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.12}
-  m_Size: {x: 0.3797463, y: 1.244453}
+  m_Offset: {x: 0, y: 0.07696438}
+  m_Size: {x: 0.3797463, y: 1.1583817}
   m_Direction: 0
 --- !u!114 &225606708107970330
 MonoBehaviour:
@@ -479,7 +479,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCalories: 0
   maxCalories: 100
-  isWinner: 0
+  plyrId: -1
+  deathCount: 0
+  readyToSpawn: 0
   ani: {fileID: 0}
   pam2: {fileID: 0}
 --- !u!114 &-5727180130906091147
