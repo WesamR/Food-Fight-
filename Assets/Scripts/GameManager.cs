@@ -9,8 +9,13 @@ public class PlayersManager : MonoBehaviour
     private List<GameObject> players = new List<GameObject>();  // List to store player instances
     // we want to keep track of score of each controller
     private Dictionary<int, int> playersFedCount = new Dictionary<int, int>();
+    private PlayerInputManager playerInputManager;
     [SerializeField] List<Transform> spawnList;
 
+    private void Start()
+    {
+        playerInputManager = GetComponent<PlayerInputManager>();
+    }
     private void OnEnable()
     {
         PlayerInputManager.instance.onPlayerJoined += OnPlayerJoined;
@@ -24,7 +29,12 @@ public class PlayersManager : MonoBehaviour
 
     private void OnPlayerJoined(PlayerInput playerInput)
     {
-        playerInput.gameObject.transform.position = spawnList[UnityEngine.Random.Range(0,spawnList.Count-1)].position;
+        // change player
+        if (spawnList.Count != 0)
+        {
+            playerInput.gameObject.transform.position = spawnList[UnityEngine.Random.Range(0, spawnList.Count - 1)].position;
+        }
+
         AddPlayer(playerInput.gameObject);
 
         int inputId = playerInput.devices[0].deviceId;
