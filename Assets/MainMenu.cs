@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public MenueSound pam5;
     void Start()
     {
-        
+        pam5 = GetComponent<MenueSound>();
+        pam5.Mainnue();
     } 
 
     public void PlayGame()
@@ -18,7 +21,7 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void QuitGame()
