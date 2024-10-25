@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("FruitSpawnScene");
+        SceneManager.LoadSceneAsync(1);
     }
 
     // Update is called once per frame

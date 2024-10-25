@@ -5,6 +5,7 @@ public class HealthSystem : MonoBehaviour
 {
     public int currentCalories;
     public int maxCalories = 100;
+    public bool isWinner = false;
     private bool isDead = false;
 
     private GameObject caloriesDisplayObject;
