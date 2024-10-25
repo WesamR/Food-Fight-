@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e3b1b5fb8bf9a478580fde21c6d690b7
+guid: ad6c01e6dbd9d44a980db50b8c1b500e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,11 +44,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 350
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,85 +97,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run_chef_right_0
+      name: idle_mutliple_chef_0
       rect:
         serializedVersion: 2
-        x: 17
+        x: 39
         y: 0
-        width: 134
-        height: 304
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 163
+        height: 564
+      alignment: 9
+      pivot: {x: 0.69095206, y: 0.3013287}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be32229c301cf4b05808fed89068f0cc
-      internalID: -1765754580
+      spriteID: 613315c6253d646feb9d2253b6dc01b3
+      internalID: -709951343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_chef_right_1
+      name: idle_mutliple_chef_1
       rect:
         serializedVersion: 2
-        x: 430
+        x: 600
         y: 0
-        width: 164
-        height: 293
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 168
+        height: 564
+      alignment: 9
+      pivot: {x: 0.703796, y: 0.2737355}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6fa8cf3e9bce47e38cff3535d64c366
-      internalID: -1318785187
+      spriteID: 00eb0ece9b2504b8aa2f82ff6cfab8a6
+      internalID: 349209925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_chef_right_2
+      name: idle_mutliple_chef_2
       rect:
         serializedVersion: 2
-        x: 843
+        x: 1161
         y: 0
-        width: 174
-        height: 293
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 169
+        height: 564
+      alignment: 9
+      pivot: {x: 0.68417233, y: 0.2737355}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65c7ebae414ee40bea26ee5b92ae4041
-      internalID: -1572135339
+      spriteID: 3678b61b755c1494fb0ebe024e330821
+      internalID: -2024331257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_chef_right_3
+      name: idle_mutliple_chef_3
       rect:
         serializedVersion: 2
-        x: 1310
+        x: 1722
         y: 0
-        width: 129
-        height: 293
+        width: 171
+        height: 564
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da53c496367524226a7e602babd33234
-      internalID: 649755918
+      spriteID: 427e282ce0d914da3b4458fcc9a9a343
+      internalID: -1951470543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_mutliple_chef_4
+      rect:
+        serializedVersion: 2
+        x: 2286
+        y: 0
+        width: 178
+        height: 564
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fa7ffb96fe7408383f9aedea06ff99
+      internalID: -1012616021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_mutliple_chef_5
+      rect:
+        serializedVersion: 2
+        x: 2858
+        y: 0
+        width: 179
+        height: 564
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0bdfed7a1354e47bd61deb6ab25cab
+      internalID: -982594951
       vertices: []
       indices: 
       edges: []
@@ -191,10 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      run_chef_right_0: -1765754580
-      run_chef_right_1: -1318785187
-      run_chef_right_2: -1572135339
-      run_chef_right_3: 649755918
+      idle_mutliple_chef_0: -709951343
+      idle_mutliple_chef_1: 349209925
+      idle_mutliple_chef_2: -2024331257
+      idle_mutliple_chef_3: -1951470543
+      idle_mutliple_chef_4: -1012616021
+      idle_mutliple_chef_5: -982594951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,12 +5,12 @@ using UnityEngine;
 public class Psound : MonoBehaviour
 {
     [SerializeField] private AudioClip JumpSound;
-
+    
     private AudioSource audioSource; 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void jumpSound()
