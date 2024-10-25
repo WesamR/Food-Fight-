@@ -21,22 +21,22 @@ public class DisplayLeader : MonoBehaviour
     void Start()
     {
         //crownText.text = "\uD83D\uDC51"; // Unicode for crown emoji
-        crownText.text = "Winner";
-        // Create a new GameObject for the TextMesh
-        crownDisplayObject = new GameObject("CrownDisplay");
-        crownTextMesh = crownDisplayObject.AddComponent<TextMesh>();
+        //crownText.text = "Winner";
+        //// Create a new GameObject for the TextMesh
+        //crownDisplayObject = new GameObject("CrownDisplay");
+        //crownTextMesh = crownDisplayObject.AddComponent<TextMesh>();
 
-        // Configure the TextMesh
-        crownTextMesh.text = isLeader ? crownText.text : "";
-        crownTextMesh.characterSize = 0.1f;
-        crownTextMesh.fontSize = 32;
-        crownTextMesh.color = Color.yellow;
-        crownTextMesh.anchor = TextAnchor.MiddleCenter;  // Center the text
+        //// Configure the TextMesh
+        //crownTextMesh.text = isLeader ? crownText.text : "";
+        //crownTextMesh.characterSize = 0.1f;
+        //crownTextMesh.fontSize = 32;
+        //crownTextMesh.color = Color.yellow;
+        //crownTextMesh.anchor = TextAnchor.MiddleCenter;  // Center the text
 
-        // the text should follow the player
-        crownDisplayObject.transform.SetParent(transform);
-        // position the text above the player
-        crownDisplayObject.transform.localPosition = new Vector3(0, 2, 0);
+        //// the text should follow the player
+        //crownDisplayObject.transform.SetParent(transform);
+        //// position the text above the player
+        //crownDisplayObject.transform.localPosition = new Vector3(0, 2, 0);
     }
 
     /// <summary>
@@ -45,8 +45,8 @@ public class DisplayLeader : MonoBehaviour
     /// </summary>
     void Update()
     {
-        crownDisplayObject.transform.localPosition = new Vector3(0, 2, 0);
-        crownTextMesh.text = isLeader ? crownText.text : "";
+        //crownDisplayObject.transform.localPosition = new Vector3(0, 2, 0);
+        //crownTextMesh.text = isLeader ? crownText.text : "";
     }
 
     public void IsLeader(bool isLeader)

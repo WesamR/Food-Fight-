@@ -65,13 +65,17 @@ public class CharInput : MonoBehaviour
     /*
      * Ground checking
     */
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Food")
         {
             grounded = true;
             animator.SetBool("isJumping", !grounded);
         }
+        //else
+        //{
+        //    grounded = false;
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -137,8 +141,8 @@ public class CharInput : MonoBehaviour
             {
                 rb.drag = groundDrag;
                 rb.velocity = new Vector2(moveVal * speed, rb.velocity.y);
-                animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
-                animator.SetFloat("yVelocity", rb.velocity.y);
+                //animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+                //animator.SetFloat("yVelocity", rb.velocity.y);
             }
             else
             {

@@ -110,7 +110,7 @@ public class PlayerGrab : MonoBehaviour
             }
             else
             {
-                force = throwForce + rb.velocity.x;
+                force = throwForce + Mathf.Abs(rb.velocity.x);
             }
 
             //Vector2 throwDirection = new Vector2(throwDir*throwForce, 0);
