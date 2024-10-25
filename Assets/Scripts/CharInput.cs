@@ -134,6 +134,8 @@ public class CharInput : MonoBehaviour
         if (moveVal < 0) GetComponent<SpriteRenderer>().flipX = true;
         if (moveVal > 0) GetComponent<SpriteRenderer>().flipX = false;
 
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("yVelocity", rb.velocity.y);
         // if directional buttons are pressed
         if (moveVal != 0)
         {
@@ -141,8 +143,6 @@ public class CharInput : MonoBehaviour
             {
                 rb.drag = groundDrag;
                 rb.velocity = new Vector2(moveVal * speed, rb.velocity.y);
-                //animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
-                //animator.SetFloat("yVelocity", rb.velocity.y);
             }
             else
             {
