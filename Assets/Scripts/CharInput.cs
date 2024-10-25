@@ -67,7 +67,7 @@ public class CharInput : MonoBehaviour
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Food")
         {
             grounded = true;
             animator.SetBool("isJumping", !grounded);
@@ -76,7 +76,7 @@ public class CharInput : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Food")
         {
             grounded = false;
         }

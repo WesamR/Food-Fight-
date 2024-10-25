@@ -21,8 +21,10 @@ public class HealthSystem : MonoBehaviour
         // Configure the TextMesh
         caloriesTextMesh.text = currentCalories + "/" + maxCalories;
         caloriesTextMesh.characterSize = 0.1f;
-        caloriesTextMesh.fontSize = 32;
-        caloriesTextMesh.color = Color.white;
+        caloriesTextMesh.fontSize = 64;
+        //caloriesTextMesh.color = Color.white;
+        //assign random color to text
+        caloriesTextMesh.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
         caloriesTextMesh.anchor = TextAnchor.MiddleCenter;  // Center the text
 
         // Set the TextMesh to be a child of the player
