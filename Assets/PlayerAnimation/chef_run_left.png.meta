@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e3b1b5fb8bf9a478580fde21c6d690b7
+guid: dd207ff6498f845e782bc4b4ce33816a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run_chef_right_0
+      name: chef_run_left_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be32229c301cf4b05808fed89068f0cc
-      internalID: -1765754580
+      spriteID: 5cc0dc7f54db74223b2e02b3064c93c8
+      internalID: -2110667909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_chef_right_1
+      name: chef_run_left_1
       rect:
         serializedVersion: 2
         x: 385
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6fa8cf3e9bce47e38cff3535d64c366
-      internalID: -1318785187
+      spriteID: 3515b3cd0909546de918d7f8e861fc4d
+      internalID: -875535953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_chef_right_2
+      name: chef_run_left_2
       rect:
         serializedVersion: 2
         x: 770
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65c7ebae414ee40bea26ee5b92ae4041
-      internalID: -1572135339
+      spriteID: b6cb957d0ea3c4ea4bf6b4365876a8c9
+      internalID: -1860316274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: run_chef_right_3
+      name: chef_run_left_3
       rect:
         serializedVersion: 2
         x: 1155
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da53c496367524226a7e602babd33234
-      internalID: 649755918
+      spriteID: b69281dff38db4648b084bf3423aee62
+      internalID: -19273428
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      run_chef_right_0: -1765754580
-      run_chef_right_1: -1318785187
-      run_chef_right_2: -1572135339
-      run_chef_right_3: 649755918
+      chef_run_left_0: -2110667909
+      chef_run_left_1: -875535953
+      chef_run_left_2: -1860316274
+      chef_run_left_3: -19273428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
