@@ -112,6 +112,7 @@ public class CharInput : MonoBehaviour
             //rb.drag = airDrag;
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
             pam.jumpSound();
+            grounded = false;
             animator.SetBool("isJumping", !grounded);
         }
     }
