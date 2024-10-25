@@ -89,11 +89,7 @@ public class HealthSystem : MonoBehaviour
             {
                 int propertyValue = food.calories; // Replace 'property' with the actual property name
                 Eat(propertyValue);
-<<<<<<< Updated upstream
-               
-=======
-                ani.SetBool("isSleeping",!food);
->>>>>>> Stashed changes
+                
                 Destroy(collision.gameObject);
                 
             }
@@ -114,7 +110,7 @@ public class HealthSystem : MonoBehaviour
         {
 
             currentCalories = maxCalories;
-            //isDead = true;
+            isDead = true;
             ani.SetBool("isSleeping",!isDead);
             pam2.DeadSound();
             

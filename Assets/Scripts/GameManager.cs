@@ -93,11 +93,8 @@ public class PlayersManager : MonoBehaviour
         }
         playersFedCount[inputId]++;
         //Debug.Log("Player " + inputId + " fed: " + playersFedCount[inputId]);
-<<<<<<< Updated upstream
-        players.Remove(player);
-=======
+
         //players.Remove(player);
->>>>>>> Stashed changes
         //Destroy(player);  // Optionally destroy the player object
     }
 
