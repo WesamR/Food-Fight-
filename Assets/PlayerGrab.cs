@@ -12,7 +12,7 @@ public class PlayerGrab : MonoBehaviour
     public Transform throwPoint;
     public float grabRange = 2f; // Distance the player can grab food
     private GameObject grabbedFood; // Currently held food
-    public float throwForce = 10f;
+    public float throwForce = 100f;
 
     // Start is called before the first frame update
     void Start()

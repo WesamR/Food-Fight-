@@ -79,8 +79,6 @@ public class CharInput : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             grounded = false;
-            pam.jumpSound();
-            animator.SetBool("isJumping", !grounded);
         }
     }
 
@@ -113,6 +111,8 @@ public class CharInput : MonoBehaviour
         {
             //rb.drag = airDrag;
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+            pam.jumpSound();
+            animator.SetBool("isJumping", !grounded);
         }
     }
 

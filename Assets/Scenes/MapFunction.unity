@@ -6607,63 +6607,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!1 &1167922002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1167922004}
-  - component: {fileID: 1167922003}
-  m_Layer: 0
-  m_Name: Food Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1167922003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167922002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6f929ac5aa34084791acd11dcce94ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fruitPrefab:
-  - {fileID: 2289322500077420296, guid: fc784183f0b2db14e8190606b53d47f0, type: 3}
-  - {fileID: 2289322500077420296, guid: 2a36b016249d49749850bebe4a5a601b, type: 3}
-  - {fileID: 2289322500077420296, guid: 1223587bfa3011c469194fae26dc1a07, type: 3}
-  - {fileID: 2289322500077420296, guid: e511697de370f30488768a5890397c2a, type: 3}
-  - {fileID: 2289322500077420296, guid: 4b932ac6232a907499fc8f4bb4bad808, type: 3}
-  - {fileID: 2289322500077420296, guid: dd58c9b5bf235e547a13a5f77f0e5f93, type: 3}
-  - {fileID: 2289322500077420296, guid: f1ca369195efa784a92205c64c5cc51f, type: 3}
-  secondSpawn: 0.1
-  minTras: -9
-  maxTras: -9
-  numberOfFood: 12
-  infinite: 1
---- !u!4 &1167922004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167922002}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.97, y: 5.11, z: -8.48683}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1329637320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8876,6 +8819,63 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1001 &7627559926057014241
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1425594841696472695, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425594841696472695, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425594841696472695, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.48683
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425594841696472695, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425594841696472695, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425594841696472695, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425594841696472695, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425594841696472695, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425594841696472695, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425594841696472695, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779902532070743630, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
+      propertyPath: m_Name
+      value: Food Spawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bdfeb4e3816d144a96caa635131ac2b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -8883,6 +8883,6 @@ SceneRoots:
   - {fileID: 64745934}
   - {fileID: 1112354178}
   - {fileID: 518619357}
-  - {fileID: 1167922004}
+  - {fileID: 7627559926057014241}
   - {fileID: 335570148}
   - {fileID: 1329637320}
