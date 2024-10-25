@@ -9,20 +9,18 @@ public class MainMenu : MonoBehaviour
     {
         
     } 
-    
 
-     void PlayGame()
+    public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
 
     }
 
-     void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
