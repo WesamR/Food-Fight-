@@ -23,12 +23,16 @@ public class CharInput : MonoBehaviour
     [SerializeField]
     public int speed = 6, airSpeed = 50, jumpForce = 800;
 
-
+    // animation
+    public Psound pam;
+    public Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); ;
+        rb = GetComponent<Rigidbody2D>();
+        pam = GetComponent<Psound>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -66,6 +70,7 @@ public class CharInput : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             grounded = true;
+            animator.SetBool("isJumping", !grounded);
         }
     }
 
@@ -74,6 +79,8 @@ public class CharInput : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             grounded = false;
+            pam.jumpSound();
+            animator.SetBool("isJumping", !grounded);
         }
     }
 
@@ -118,6 +125,10 @@ public class CharInput : MonoBehaviour
         // linear drag changes so movement is slower mid air
         // also the speed
 
+        // flip animation depending on direction
+        if (moveVal < 0) GetComponent<SpriteRenderer>().flipX = true;
+        if (moveVal > 0) GetComponent<SpriteRenderer>().flipX = false;
+
         // if directional buttons are pressed
         if (moveVal != 0)
         {
@@ -125,6 +136,8 @@ public class CharInput : MonoBehaviour
             {
                 rb.drag = groundDrag;
                 rb.velocity = new Vector2(moveVal * speed, rb.velocity.y);
+                animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+                animator.SetFloat("yVelocity", rb.velocity.y);
             }
             else
             {

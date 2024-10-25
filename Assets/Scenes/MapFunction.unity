@@ -6644,11 +6644,11 @@ MonoBehaviour:
   - {fileID: 2289322500077420296, guid: 4b932ac6232a907499fc8f4bb4bad808, type: 3}
   - {fileID: 2289322500077420296, guid: dd58c9b5bf235e547a13a5f77f0e5f93, type: 3}
   - {fileID: 2289322500077420296, guid: f1ca369195efa784a92205c64c5cc51f, type: 3}
-  secondSpawn: 5
+  secondSpawn: 0.1
   minTras: -9
   maxTras: -9
   numberOfFood: 12
-  infinite: 0
+  infinite: 1
 --- !u!4 &1167922004
 Transform:
   m_ObjectHideFlags: 0

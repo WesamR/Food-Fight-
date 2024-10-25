@@ -20,7 +20,8 @@ public class DisplayLeader : MonoBehaviour
     /// </summary>
     void Start()
     {
-        crownText.text = "\uD83D\uDC51"; // Unicode for crown emoji
+        //crownText.text = "\uD83D\uDC51"; // Unicode for crown emoji
+        crownText.text = "Winner";
         // Create a new GameObject for the TextMesh
         crownDisplayObject = new GameObject("CrownDisplay");
         crownTextMesh = crownDisplayObject.AddComponent<TextMesh>();
