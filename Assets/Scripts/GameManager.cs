@@ -36,6 +36,7 @@ public class PlayersManager : MonoBehaviour
         var healthSys = player.GetComponent<HealthSystem>();
         healthSys.readyToSpawn = false;
         healthSys.currentCalories = 0;
+        healthSys.deathCount += 1;
 
         if (spawnList.Count != 0)
         {
@@ -158,6 +159,7 @@ public class PlayersManager : MonoBehaviour
             //UpdateScore();
         }
     }
+    
     //// Array to store player input information
     //public PlayerInput[] players;
 

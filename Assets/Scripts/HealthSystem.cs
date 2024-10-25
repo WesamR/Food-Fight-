@@ -6,7 +6,7 @@ public class HealthSystem : MonoBehaviour
     public int currentCalories;
     public int maxCalories = 100;
     public int plyrId=-1;
-    public bool isWinner = false;
+    public int deathCount=0;
     private bool isDead = false;
     public bool readyToSpawn = false;
 
@@ -49,7 +49,7 @@ public class HealthSystem : MonoBehaviour
     {
         // Ensure the caloriesDisplayObject stays above the player
         caloriesDisplayObject.transform.localPosition = new Vector3(0, 1, 0);
-        caloriesTextMesh.text = $"Player({plyrId}) {currentCalories}/{maxCalories}";
+        caloriesTextMesh.text = $"Player({plyrId}) Slept{deathCount}x {currentCalories}/{maxCalories}";
 
     }
 
