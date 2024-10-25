@@ -84,7 +84,7 @@ public class PlayerGrab : MonoBehaviour
         }
     }
 
-    void ThrowFood(Vector2 throwDir, int facingDir)
+    public void ThrowFood(Vector2 throwDir, int facingDir)
     {
         if (grabbedFood != null)
         {

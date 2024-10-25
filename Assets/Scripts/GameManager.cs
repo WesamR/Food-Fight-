@@ -27,9 +27,30 @@ public class PlayersManager : MonoBehaviour
     }
 
 
+    public void RestartPlayer(GameObject player)
+    {
+        player.GetComponent<CharInput>().enabled = true;
+        player.GetComponent<CircleCollider2D>().enabled = true;
+        player.GetComponent<CapsuleCollider2D>().enabled = true;
+        player.GetComponent<Rigidbody2D>().gravityScale = 1;
+        var healthSys = player.GetComponent<HealthSystem>();
+        healthSys.readyToSpawn = false;
+        healthSys.currentCalories = 0;
+
+        if (spawnList.Count != 0)
+        {
+            player.transform.position = spawnList[UnityEngine.Random.Range(0, spawnList.Count - 1)].position;
+        }
+        else
+        {
+            player.transform.position = new Vector3(0, 0);
+        }
+        Debug.Log("respawned");
+    }
+
     private void OnPlayerJoined(PlayerInput playerInput)
     {
-        // change player
+        // change player position
         if (spawnList.Count != 0)
         {
             playerInput.gameObject.transform.position = spawnList[UnityEngine.Random.Range(0, spawnList.Count - 1)].position;
@@ -45,6 +66,8 @@ public class PlayersManager : MonoBehaviour
         {
             inputId = 1;
         }
+
+        playerInput.gameObject.GetComponent<HealthSystem>().plyrId = inputId;
 
         if (!playersFedCount.ContainsKey(inputId))
         {
@@ -70,7 +93,11 @@ public class PlayersManager : MonoBehaviour
         }
         playersFedCount[inputId]++;
         //Debug.Log("Player " + inputId + " fed: " + playersFedCount[inputId]);
+<<<<<<< Updated upstream
         players.Remove(player);
+=======
+        //players.Remove(player);
+>>>>>>> Stashed changes
         //Destroy(player);  // Optionally destroy the player object
     }
 
@@ -126,11 +153,12 @@ public class PlayersManager : MonoBehaviour
         // Example usage: Check for incapacitated players
         for (int i = players.Count - 1; i >= 0; i--)
         {
-            if (players[i].GetComponent<HealthSystem>().IsDead)
-            {
-                OnPlayerFed(players[i]);
-            }
-            UpdateScore();
+            if (players[i].GetComponent<HealthSystem>().readyToSpawn) RestartPlayer(players[i]);
+            //if (players[i].GetComponent<HealthSystem>().IsDead)
+            //{
+            //    OnPlayerFed(players[i]);
+            //}
+            //UpdateScore();
         }
     }
     //// Array to store player input information

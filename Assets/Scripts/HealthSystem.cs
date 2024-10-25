@@ -5,8 +5,12 @@ public class HealthSystem : MonoBehaviour
 {
     public int currentCalories;
     public int maxCalories = 100;
+    public int plyrId=-1;
     public bool isWinner = false;
     private bool isDead = false;
+    public bool readyToSpawn = false;
+
+    private float despawnCounter = 0, despawnTimer=10;
 
     private GameObject caloriesDisplayObject;
     private TextMesh caloriesTextMesh;
@@ -23,7 +27,7 @@ public class HealthSystem : MonoBehaviour
         caloriesTextMesh = caloriesDisplayObject.AddComponent<TextMesh>();
 
         // Configure the TextMesh
-        caloriesTextMesh.text = currentCalories + "/" + maxCalories;
+        caloriesTextMesh.text =$"Player({plyrId}) {currentCalories}/{maxCalories}";// "Player("+plyrId+")"+currentCalories + "/" + maxCalories;
         caloriesTextMesh.characterSize = 0.1f;
         caloriesTextMesh.fontSize = 64;
         //caloriesTextMesh.color = Color.white;
@@ -45,8 +49,31 @@ public class HealthSystem : MonoBehaviour
     {
         // Ensure the caloriesDisplayObject stays above the player
         caloriesDisplayObject.transform.localPosition = new Vector3(0, 1, 0);
-        caloriesTextMesh.text = currentCalories + "/" + maxCalories;
+        caloriesTextMesh.text = $"Player({plyrId}) {currentCalories}/{maxCalories}";
 
+    }
+
+    void FixedUpdate()
+    {
+        if (isDead)
+        {
+            GetComponent<CharInput>().enabled = false;
+            GetComponent<PlayerGrab>().ThrowFood(new Vector2(0, 1), 1);
+            //GetComponent<PlayerInput>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+
+            despawnCounter += Time.deltaTime;
+
+            if (despawnCounter >= 5f)
+            {
+                //Destroy(gameObject);
+                despawnCounter = 0;
+                readyToSpawn = true;
+                isDead = false;
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -62,7 +89,11 @@ public class HealthSystem : MonoBehaviour
             {
                 int propertyValue = food.calories; // Replace 'property' with the actual property name
                 Eat(propertyValue);
+<<<<<<< Updated upstream
                
+=======
+                ani.SetBool("isSleeping",!food);
+>>>>>>> Stashed changes
                 Destroy(collision.gameObject);
                 
             }
