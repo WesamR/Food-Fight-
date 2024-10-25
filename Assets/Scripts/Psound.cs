@@ -7,6 +7,8 @@ public class Psound : MonoBehaviour
     [SerializeField] private AudioClip JumpSound;
     [SerializeField] private AudioClip Throw;
     [SerializeField] private AudioClip Eat;
+    [SerializeField] private AudioClip deadClip;
+
     private AudioSource audioSource; 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,10 @@ public class Psound : MonoBehaviour
     {
          AudioSource.PlayClipAtPoint(Eat, transform.position, 1f);
 
+    }
+     public void DeadSound()
+    {
+         AudioSource.PlayClipAtPoint(deadClip, transform.position, 1f);
     }
 
     // Update is called once per frame

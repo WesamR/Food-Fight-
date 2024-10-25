@@ -71,7 +71,7 @@ public class PlayersManager : MonoBehaviour
         playersFedCount[inputId]++;
         //Debug.Log("Player " + inputId + " fed: " + playersFedCount[inputId]);
         players.Remove(player);
-        Destroy(player);  // Optionally destroy the player object
+        //Destroy(player);  // Optionally destroy the player object
     }
 
     /// <summary>
