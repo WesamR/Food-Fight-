@@ -71,6 +71,7 @@ public class CharInput : MonoBehaviour
         {
             grounded = true;
             animator.SetBool("isJumping", !grounded);
+            Debug.Log("grounddd");
         }
         //else
         //{
