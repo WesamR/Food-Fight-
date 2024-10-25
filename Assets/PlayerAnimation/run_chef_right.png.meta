@@ -100,10 +100,10 @@ TextureImporter:
       name: run_chef_right_0
       rect:
         serializedVersion: 2
-        x: 17
+        x: 0
         y: 0
-        width: 134
-        height: 304
+        width: 385.25
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: run_chef_right_1
       rect:
         serializedVersion: 2
-        x: 430
+        x: 385
         y: 0
-        width: 164
-        height: 293
+        width: 385.25
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: run_chef_right_2
       rect:
         serializedVersion: 2
-        x: 843
+        x: 770
         y: 0
-        width: 174
-        height: 293
+        width: 385.25
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: run_chef_right_3
       rect:
         serializedVersion: 2
-        x: 1310
+        x: 1155
         y: 0
-        width: 129
-        height: 293
+        width: 385.25
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
