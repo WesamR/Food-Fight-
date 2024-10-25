@@ -9,31 +9,18 @@ public class MainMenu : MonoBehaviour
     {
         
     } 
-    
-
-<<<<<<< Updated upstream
-     void PlayGame()
-    {
-        SceneManager.LoadSceneAsync(1);
-=======
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("FruitSpawnScene");
->>>>>>> Stashed changes
+        SceneManager.LoadSceneAsync(1);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
 
     }
 
-<<<<<<< Updated upstream
-     void QuitGame()
-=======
     public void QuitGame()
->>>>>>> Stashed changes
     {
         Application.Quit();
     }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 75871b4eeca627d409513f8546a98b49
+guid: dd207ff6498f845e782bc4b4ce33816a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -95,7 +95,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: chef_run_left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 385.25
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc0dc7f54db74223b2e02b3064c93c8
+      internalID: -2110667909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chef_run_left_1
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 0
+        width: 385.25
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3515b3cd0909546de918d7f8e861fc4d
+      internalID: -875535953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chef_run_left_2
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 0
+        width: 385.25
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cb957d0ea3c4ea4bf6b4365876a8c9
+      internalID: -1860316274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chef_run_left_3
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 0
+        width: 385.25
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69281dff38db4648b084bf3423aee62
+      internalID: -19273428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +190,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chef_run_left_0: -2110667909
+      chef_run_left_1: -875535953
+      chef_run_left_2: -1860316274
+      chef_run_left_3: -19273428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
